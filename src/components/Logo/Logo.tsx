@@ -7,17 +7,29 @@ const variants: Record<string, string> = {
   wordmark: 'wordmark.svg',
 };
 
-type Props = {
-  variant?: string;
+const sizes: Record<string, number> = {
+  xxsmall: 104,
+  xsmall: 144,
+  small: 176,
+  medium: 240,
+  large: 360,
+  xlarge: 480,
 };
 
-const Logo: FC<Props> = ({ variant = 'core' }) => {
+type Props = {
+  variant?: string;
+  size?: string;
+};
+
+const Logo: FC<Props> = ({ variant = 'core', size = 'medium' }) => {
+  const wordmarkHeight = variant === 'wordmark' ? sizes[size] / 3 : sizes[size];
+
   return (
     <Image
       src={variants[variant]}
       alt="Logo do E-Healthy"
-      width={200}
-      height={200}
+      width={sizes[size]}
+      height={wordmarkHeight}
     />
   );
 };
