@@ -1,0 +1,93 @@
+.c-typography {
+  &--h1, 
+  &--h2, 
+  &--h3, 
+  &--h4, 
+  &--h5,
+  &--h6 {
+    font-family: var(--font-rubik);
+  }
+
+  &--h1 {
+    font-size: 96px;
+  }
+
+  &--h2 {
+    font-size: 64px;
+  }
+
+  &--h3 {
+    font-size: 48px;
+  }
+
+  &--h4 {
+    font-size: 40px;
+  }
+
+  &--h5 {
+    font-size: 32px;
+  }
+
+  &--h6 {
+    font-size: 24px;
+  }
+
+  &--body {
+    font-size: 16px;
+  }
+
+  &--bodyLarge {
+    font-size: 20px;
+  }           
+
+  &--bodySmall {
+    font-size: 14px;
+  }
+
+  &--small {
+    font-size: 12px;
+  }
+
+
+  // Stylings
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--underline {
+    text-decoration: underline;
+  }
+
+  // Alignments
+  &--center {
+    text-align: center;
+  }
+
+  &--justify {
+    text-align: justify;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+
+  // Transforms
+  &--lowercase {
+    text-transform: lowercase;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+}
+
+
