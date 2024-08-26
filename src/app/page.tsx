@@ -1,95 +1,41 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+'use client';
 
-export default function Home() {
+import styles from './page.module.scss';
+
+import Logo from '@/components/Logo';
+import Navigation from '@/components/Navigation';
+import Typography from '@/components/Typography';
+import useMediaQuery from '@/hooks/useMediaQuery';
+
+const Home = () => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const logoSize = isMobile ? 'medium' : 'large';
+  const titleSize = isMobile ? 'h5' : 'h3';
+  const contentSize = isMobile ? 'body' : 'body';
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <Navigation />
+      <section className={styles.main}>
+        <div className={styles.logo}>
+          <Logo size={logoSize} />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className={styles.content}>
+          <Typography variant={titleSize} as="h1">
+            Conheça o E-Healthy
+          </Typography>
+          <Typography variant={contentSize} align="justify">
+            Somos um portal dedicado ao cuidado da sua saúde mental, oferecendo
+            uma variedade de funcionalidades para promover equilíbrio, bem-estar
+            e inspiração no seu dia-a-dia. Nosso espaço seguro e acolhedor
+            inclui ferramentas de autoavaliação para monitorar seu progresso.
+            Estamos comprometidos em te ajudar a alcançar um bem-estar mental
+            duradouro e uma vida mais plena e satisfatória.
+          </Typography>
+        </div>
+      </section>
     </main>
   );
-}
+};
+
+export default Home;
