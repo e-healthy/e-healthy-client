@@ -1,0 +1,37 @@
+.main {
+  background-color: var(--yellow);
+  display: grid;
+  height: 100dvh;
+  padding: 24px;
+
+  @media screen and (min-width: 425px) {
+    padding: 36px;
+  }
+
+  @media screen and (min-width: 960px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 64px;
+  }
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+
+  @media screen and (min-width: 425px) {
+    gap: 24px;
+  }
+
+  @media screen and (min-width: 960px) {
+    gap: 32px;
+  }
+}
