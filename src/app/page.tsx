@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -12,23 +13,16 @@ import Typography from '@/components/Typography';
 import Checkbox from '@/components/Form/Checkbox';
 import Input from '@/components/Form/Input';
 import Button from '@/components/Form/Button';
+import Modal from '@/components/Modal';
 import useMediaQuery from '@/hooks/useMediaQuery';
 
 import styles from './page.module.scss';
 
 const Home = () => {
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const logoSize = isMobile ? 'medium' : 'large';
-  const titleSize = isMobile ? 'h5' : 'h3';
-  const contentSize = isMobile ? 'body' : 'body';
+  const [isModalOpen, setModalOpen] = useState(false);
 
-  const classes = {
-    root: classNames(styles['p-root']),
-    logo: classNames(styles['p-root__logo']),
-    content: classNames(styles['p-root__content']),
-    title: classNames(styles['p-root__content__title']),
-    email: classNames(styles['p-root__content__email']),
-  };
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
   const schema = z.object({
     terms: z.boolean().refine((value) => value === true, 'Campo obrigatório.'),
@@ -53,13 +47,40 @@ const Home = () => {
   });
 
   const onSubmit = (data: any) => {
-    console.log(data);
+    try {
+      console.log(data);
+      openModal();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const logoSize = isMobile ? 'medium' : 'large';
+  const titleSize = isMobile ? 'h5' : 'h3';
+  const contentSize = isMobile ? 'body' : 'body';
+
+  const classes = {
+    root: classNames(styles['p-root']),
+    logo: classNames(styles['p-root__logo']),
+    content: classNames(styles['p-root__content']),
+    title: classNames(styles['p-root__content__title']),
+    email: classNames(styles['p-root__content__email']),
   };
 
   return (
     <main>
       <Navigation />
       <section className={classes.root}>
+        <Modal isOpen={isModalOpen} onClose={closeModal} closeByIcon>
+          <Typography variant="bodyLarge" styling="bold">
+            Obrigado por demonstrar interesse!
+          </Typography>
+          <Typography variant="body">
+            Em breve você receberá mais informações.
+          </Typography>
+        </Modal>
+
         <div className={classes.logo}>
           <Logo size={logoSize} />
         </div>
