@@ -32,6 +32,7 @@ const Logo: FC<TProps> = ({ variant = 'core', size = 'medium' }) => {
       alt="Logo do E-Healthy"
       width={sizes[size]}
       height={wordmarkHeight}
+      priority
     />
   );
 };
