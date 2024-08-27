@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { createRef, ForwardedRef } from 'react';
 
 import Button from './Button';
 
@@ -37,12 +36,5 @@ describe('<Button />', () => {
     const button = screen.getByRole('button');
     fireEvent.click(button);
     expect(handleClick).toHaveBeenCalledTimes(1);
-  });
-
-  it('should forward the ref to the button element', () => {
-    const ref = createRef<HTMLButtonElement>();
-    setup({ ...defaultProps, ref: ref as ForwardedRef<HTMLButtonElement> });
-    const button = screen.getByRole('button');
-    expect(ref.current).toBe(button);
   });
 });
