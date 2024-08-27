@@ -1,0 +1,16 @@
+.c-button {
+  align-items: center;
+  background-color: var(--color-purple-blue);
+  border-radius: 8px;
+  border: 1px solid var(--color-purple-blue);
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  height: 42px;
+  padding: 10px 24px;
+  text-align: center;
+
+  p {
+    color: var(--color-white);
+  }
+}
