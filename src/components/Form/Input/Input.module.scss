@@ -1,0 +1,30 @@
+.c-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__container {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    border: 1px solid var(--color-purple-blue);
+    display: flex;
+    gap: 8px;
+    padding: 10px 8px;
+  }
+
+  &__input {
+    border: none;
+    font-family: var(--font-roboto);
+    outline: none;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--color-purple-blue);
+      text-align: center;
+    }
+  }
+
+  &__error {
+    color: var(--color-red);
+  }
+}
