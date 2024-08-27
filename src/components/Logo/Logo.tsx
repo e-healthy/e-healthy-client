@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
+import classNames from 'classnames';
 
 const variants: Record<string, string> = {
   core: 'core.svg',
@@ -16,16 +17,17 @@ const sizes: Record<string, number> = {
   xlarge: 480,
 };
 
-type Props = {
+type TProps = {
   variant?: string;
   size?: string;
 };
 
-const Logo: FC<Props> = ({ variant = 'core', size = 'medium' }) => {
+const Logo: FC<TProps> = ({ variant = 'core', size = 'medium' }) => {
   const wordmarkHeight = variant === 'wordmark' ? sizes[size] / 3 : sizes[size];
 
   return (
     <Image
+      className={classNames('c-logo')}
       src={variants[variant]}
       alt="Logo do E-Healthy"
       width={sizes[size]}

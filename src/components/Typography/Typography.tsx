@@ -18,7 +18,7 @@ const headings = {
   h6: 'h6',
 };
 
-const tagsMapping = {
+export const tagsMapping = {
   ...headings,
   p: 'p',
   b: 'b',
@@ -31,10 +31,10 @@ const tagsMapping = {
   label: 'label',
 };
 
-type TTypographyElements = keyof typeof tagsMapping;
+export type TTypographyElements = keyof typeof tagsMapping;
 type THeadingElements = keyof typeof headings;
 
-type TVariants =
+export type TVariants =
   | 'h1'
   | 'h2'
   | 'h3'
@@ -59,7 +59,7 @@ const aligns = {
   right: 'right',
 } as const;
 
-type TAlignments = keyof typeof aligns;
+export type TAlignments = keyof typeof aligns;
 
 const stylings = {
   bold: 'bold',
@@ -67,14 +67,14 @@ const stylings = {
   normal: 'normal',
 } as const;
 
-type TStylings = keyof typeof stylings;
+export type TStylings = keyof typeof stylings;
 
 const transforms = {
   lowercase: 'lowercase',
   uppercase: 'uppercase',
 } as const;
 
-type TTransforms = keyof typeof transforms;
+export type TTransforms = keyof typeof transforms;
 
 type Props = {
   variant?: TVariants;

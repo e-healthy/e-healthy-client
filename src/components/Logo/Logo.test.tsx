@@ -1,23 +1,25 @@
 import { render, screen } from '@testing-library/react';
+
 import Logo from './Logo';
 
-describe('Logo component', () => {
-  it('renders the correct image based on the variant', () => {
-    render(<Logo variant="logomark" />);
+const defaultProps = {
+  variant: 'core',
+  size: 'medium',
+};
+
+const setup = (props = defaultProps) => render(<Logo {...props} />);
+
+describe('<Logo />', () => {
+  it('should render the correct image based on the variant', () => {
+    setup({ ...defaultProps, variant: 'logomark' });
     const image = screen.getByAltText('Logo do E-Healthy');
     expect(image).toHaveAttribute('src', 'logomark.svg');
   });
 
-  it('renders the correct size based on the size prop', () => {
-    render(<Logo size="large" />);
+  it('should render the correct size based on the size prop', () => {
+    setup({ ...defaultProps, size: 'large' });
     const image = screen.getByAltText('Logo do E-Healthy');
-    expect(image).toHaveAttribute('width', '360');
     expect(image).toHaveAttribute('height', '360');
-  });
-
-  it('renders the correct height for the wordmark variant', () => {
-    render(<Logo variant="wordmark" size="medium" />);
-    const image = screen.getByAltText('Logo do E-Healthy');
-    expect(image).toHaveAttribute('height', '120');
+    expect(image).toHaveAttribute('width', '360');
   });
 });

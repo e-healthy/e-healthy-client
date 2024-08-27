@@ -8,16 +8,12 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 
 import styles from './Navigation.module.scss';
 
-type TProps = {
-  className?: string;
-};
-
-const Navigation: FC<TProps> = ({ className }) => {
+const Navigation: FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const logoSize = isMobile ? 'xxsmall' : 'xsmall';
 
   return (
-    <nav className={classNames(styles['c-navigation'], className)}>
+    <nav className={classNames(styles['c-navigation'])}>
       <div>
         <Logo variant="wordmark" size={logoSize} />
       </div>
