@@ -1,7 +1,10 @@
 'use client';
 
-import Image from 'next/image';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import classNames from 'classnames';
+import Image from 'next/image';
 
 import Logo from '@/components/Logo';
 import Navigation from '@/components/Navigation';
@@ -25,6 +28,32 @@ const Home = () => {
     content: classNames(styles['p-root__content']),
     title: classNames(styles['p-root__content__title']),
     email: classNames(styles['p-root__content__email']),
+  };
+
+  const schema = z.object({
+    terms: z.boolean().refine((value) => value === true, 'Campo obrigatório.'),
+    communications: z.boolean().refine((value) => value === true),
+    email: z.string().email({
+      message: 'Email inválido.',
+    }),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      terms: false,
+      communications: false,
+      email: '',
+    },
+    resolver: zodResolver(schema),
+    mode: 'onChange',
+  });
+
+  const onSubmit = (data: any) => {
+    console.log(data);
   };
 
   return (
@@ -52,45 +81,49 @@ const Home = () => {
             duradouro e uma vida mais plena e satisfatória.
           </Typography>
 
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Checkbox
               id="terms"
               label={
-                <Typography variant="body">
+                <Typography variant="bodySmall">
                   Li e estou de acordo com o Termo de Uso e Política de
                   Privacidade.
                 </Typography>
               }
-              error={'Por favor, concorde com os termos.'}
+              error={errors?.terms?.message}
+              {...register('terms')}
             />
             <Checkbox
               id="communications"
               label={
-                <Typography variant="body">
+                <Typography variant="bodySmall">
                   Desejo receber comunicações sobre promocões e novidades.
                 </Typography>
               }
+              {...register('communications')}
             />
-          </form>
 
-          <div className={classes.email}>
-            <Input
-              id="email"
-              placeholder="Digite seu email"
-              startAdornment={
-                <Image src="/email.svg" alt="Email" width={20} height={16} />
-              }
-              error="Email inválido"
-            />
-            <Button>
-              <Image
-                src="/arrow-foward.svg"
-                alt="Email"
-                width={16}
-                height={16}
+            <div className={classes.email}>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Digite seu email"
+                startAdornment={
+                  <Image src="/email.svg" alt="Email" width={20} height={16} />
+                }
+                error={errors?.email?.message}
+                {...register('email')}
               />
-            </Button>
-          </div>
+              <Button type="submit">
+                <Image
+                  src="/arrow-foward.svg"
+                  alt="Email"
+                  width={16}
+                  height={16}
+                />
+              </Button>
+            </div>
+          </form>
 
           <Typography variant="bodySmall" align="justify" styling="bold">
             Ao preencher este formulário você a equipe do E-Healthy, a te
