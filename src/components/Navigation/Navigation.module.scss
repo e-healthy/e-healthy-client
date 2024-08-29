@@ -1,0 +1,17 @@
+.c-navigation {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  height: 56px;
+  position: sticky;
+  width: 100%;
+  z-index: 100;
+
+  @media screen and (min-width: 768px) {
+    height: 72px;
+  }
+
+  div {
+    padding: 0 16px;
+  }
+}

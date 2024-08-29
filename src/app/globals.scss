@@ -1,0 +1,38 @@
+:root {
+  --font-roboto: 'Roboto', sans-serif;
+  --font-rubik: 'Rubik', sans-serif;
+
+  --color-black: #000000;
+  --color-blue: #4f49f3;
+  --color-blue-darken: #184073;
+  --color-gray-lighten: #d9d9d9;
+  --color-gray: #8b8b8b;
+  --color-purple: #6a68a7;
+  --color-purple-blue: #262d40;
+  --color-purple-gray: #eaecf4;
+  --color-red: #B00000;
+  --color-yellow: #f2af5e;
+  --color-white-lighten: #d9d9d9;
+  --color-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: var(--font-roboto);
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, small { 
+  color: var(--color-purple-blue);
+}
+
+p, small {
+  line-height: 24px;
+}
