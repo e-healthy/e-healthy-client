@@ -8,4 +8,5 @@ const pool = new Pool({
   port: parseInt(process.env.DATABASE_PORT || '5432', 10),
 });
 
+
 export default pool;
