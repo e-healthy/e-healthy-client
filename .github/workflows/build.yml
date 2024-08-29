@@ -1,13 +1,12 @@
-name: build
+name: Client Build
 
 on:
   push:
     branches: [main]
+  pull_request:
     paths:
       - 'client/**'
-
-env:
-  CI: true
+  workflow_dispatch:
 
 defaults:
   run:
@@ -17,12 +16,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: '20.x'
 
-      - name: Install npm dependencies
+      - name: Install NPM dependencies
         run: npm install
 
       - name: Run Prettier
@@ -31,7 +30,7 @@ jobs:
       - name: Run Lint
         run: npm run lint
 
-      - name: Run Tests
+      - name: Run Test
         run: npm run test:coverage
 
       - name: Coveralls
