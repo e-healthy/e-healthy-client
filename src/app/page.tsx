@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import Image from 'next/image';
-import styles from './page.module.css';
-=======
 'use client';
 
 import { useState } from 'react';
@@ -71,7 +67,6 @@ const Home = () => {
     title: classNames(styles['p-root__content__title']),
     email: classNames(styles['p-root__content__email']),
   };
->>>>>>> c2e6b50bc7d80129c2c04d3bd05c44a83314a924
 
   return (
     <main>
@@ -96,16 +91,6 @@ const Home = () => {
             align="center"
             className={classes.title}
           >
-<<<<<<< HEAD
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-=======
             Conheça o E-Healthy
           </Typography>
           <Typography variant={contentSize} align="justify">
@@ -128,7 +113,6 @@ const Home = () => {
               }
               error={errors?.terms?.message}
               {...register('terms')}
->>>>>>> c2e6b50bc7d80129c2c04d3bd05c44a83314a924
             />
             <Checkbox
               id="communications"
