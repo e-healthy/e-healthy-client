@@ -65,6 +65,7 @@ const Home = () => {
     logo: classNames(styles['p-root__logo']),
     content: classNames(styles['p-root__content']),
     title: classNames(styles['p-root__content__title']),
+    label: classNames(styles['p-root__content__label']),
     email: classNames(styles['p-root__content__email']),
   };
 
@@ -106,7 +107,7 @@ const Home = () => {
             <Checkbox
               id="terms"
               label={
-                <Typography variant="bodySmall">
+                <Typography variant="bodySmall" className={classes.label}>
                   Li e estou de acordo com o Termo de Uso e Política de
                   Privacidade.
                 </Typography>
@@ -117,7 +118,7 @@ const Home = () => {
             <Checkbox
               id="communications"
               label={
-                <Typography variant="bodySmall">
+                <Typography variant="bodySmall" className={classes.label}>
                   Desejo receber comunicações sobre promocões e novidades.
                 </Typography>
               }
