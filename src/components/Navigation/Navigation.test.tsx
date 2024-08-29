@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { createMatchMedia } from '@/utils/test';
+import { createMatchMedia } from '@/utils/setupTest';
 
 import Navigation from './Navigation';
 

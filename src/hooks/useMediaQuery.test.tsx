@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { createMatchMedia } from '@/utils/test';
+import { createMatchMedia } from '@/utils/setupTest';
 
 import useMediaQuery from './useMediaQuery';
 
