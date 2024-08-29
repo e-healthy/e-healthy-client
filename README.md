@@ -39,10 +39,10 @@ npm install
 npm run dev
 ```
 
-4 - Abre http://localhost:3000 em seu navegador para ver o resultado.
+4 - Abra http://localhost:3000 em seu navegador para ver o resultado.
 
 
 ## Deploy na Vercel
 
-O projeto está sendo deployado na Vercel, mesmos criadores do Next.js, e você visualizado através da seguinte URL: 
+O projeto está sendo deployado na Vercel, mesmos criadores do Next.js, e você pode visualizá-lo através da seguinte URL: 
 ### https://e-healthy.vercel.app/
