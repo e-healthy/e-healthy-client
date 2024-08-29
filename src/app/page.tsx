@@ -144,7 +144,7 @@ const Home = () => {
                 />
               </Button>
             </div>
-          </form>
+          </form >
 
           <Typography variant="bodySmall" align="justify" styling="bold">
             Ao preencher este formulário você a equipe do E-Healthy, a te
@@ -152,9 +152,9 @@ const Home = () => {
             terceiros e interrompemos a sua assinatura a qualquer momento que
             desejar.
           </Typography>
-        </div>
-      </section>
-    </main>
+        </div >
+      </section >
+    </main >
   );
 };
 
