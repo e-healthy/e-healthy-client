@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# `e-healthy-client`
 
-## Getting Started
+[![Coverage Status](https://coveralls.io/repos/github/e-healthy/e-healthy-client/badge.svg?branch=main)](https://coveralls.io/github/e-healthy/e-healthy-client?branch=main) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/e-healthy/e-healthy-client/.github%2Fworkflows%2Fbuild.yml) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/e-healthy/e-healthy-client/.github%2Fworkflows%2Fdeploy.yml)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/e-healthy/e-healthy-client/.github%2Fworkflows%2Fpreview.yml)
 
-First, run the development server:
+> Este repositório contém o lado `client` do produto E-Healthy.
+
+## Tecnologias Utilizadas
+- [Next.js](https://nextjs.org/) 
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [SASS](https://sass-lang.com/)
+- [classnames](https://github.com/JedWatson/classnames)
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [Jest](https://jestjs.io/pt-BR/) 
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [ESLint](https://eslint.org/) 
+- [Prettier](https://prettier.io/)
+- [Husky](https://typicode.github.io/husky/) 
+- [lint-staged](https://github.com/lint-staged/lint-staged)
+
+
+## Como rodar o projeto?
+1 - Clone o projeto para a sua máquina: 
+  ```bash
+  git clone git@github.com:e-healthy/e-healthy-client.git
+  ```
+
+
+2 - Instale as dependências: 
+```bash
+npm install
+```
+
+3 - Então, rode o servidor de desenvolvimento: 
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4 - Abre http://localhost:3000 em seu navegador para ver o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Deploy na Vercel
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+O projeto está sendo deployado na Vercel, mesmos criadores do Next.js, e você visualizado através da seguinte URL: 
+### https://e-healthy.vercel.app/
