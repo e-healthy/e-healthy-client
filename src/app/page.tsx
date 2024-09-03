@@ -15,11 +15,13 @@ import Input from '@/components/Form/Input';
 import Button from '@/components/Form/Button';
 import Modal from '@/components/Modal';
 import useMediaQuery from '@/hooks/useMediaQuery';
+import { subscribe, TSubscribe } from '@/services/subscribe';
 
 import styles from './page.module.scss';
 
 const Home = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [subscribeError, setSubscribeError] = useState(false);
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
@@ -46,13 +48,15 @@ const Home = () => {
     mode: 'onChange',
   });
 
-  const onSubmit = (data: any) => {
-    try {
-      console.log(data);
-      openModal();
-    } catch (error) {
-      console.log(error);
+  const onSubmit = async (data: TSubscribe) => {
+    const subscribeResponse = await subscribe(data);
+
+    if (subscribeResponse.error) {
+      setSubscribeError(true);
+      return;
     }
+
+    openModal();
   };
 
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -67,6 +71,7 @@ const Home = () => {
     title: classNames(styles['p-root__content__title']),
     label: classNames(styles['p-root__content__label']),
     email: classNames(styles['p-root__content__email']),
+    error: classNames(styles['p-root__content__error']),
   };
 
   return (
@@ -145,6 +150,11 @@ const Home = () => {
                 />
               </Button>
             </div>
+            {subscribeError && (
+              <Typography variant="bodySmall" className={classes.error}>
+                Esse email já está cadastrado.
+              </Typography>
+            )}
           </form>
 
           <Typography variant="bodySmall" align="justify" styling="bold">

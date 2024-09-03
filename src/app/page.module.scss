@@ -48,5 +48,10 @@
       margin-top: 16px;
       gap: 8px;
     }
+
+    &__error {
+      color: var(--color-red);
+      margin-top: 4px;
+    }
   }
 }
