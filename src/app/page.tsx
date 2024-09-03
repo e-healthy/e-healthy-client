@@ -38,6 +38,7 @@ const Home = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     defaultValues: {
       terms: false,
@@ -49,6 +50,8 @@ const Home = () => {
   });
 
   const onSubmit = async (data: TSubscribe) => {
+    setSubscribeError(false);
+
     const subscribeResponse = await subscribe(data);
 
     if (subscribeResponse.error) {
@@ -56,6 +59,7 @@ const Home = () => {
       return;
     }
 
+    reset();
     openModal();
   };
 
