@@ -1,0 +1,23 @@
+.c-card {
+  background-color: var(--color-blue-darken);
+  border-radius: 12px;
+  padding: 32px 16px;
+
+  @media screen and (min-width: 960px) {
+    padding: 32px 24px;
+    width: 312px;
+  }
+
+  &__icon {
+    text-align: center;
+  }
+
+  &__title {
+    color: var(--color-white);
+    padding: 24px 0;
+
+    @media screen and (min-width: 768px) {
+      padding: 32px 0;
+    }
+  }
+}
