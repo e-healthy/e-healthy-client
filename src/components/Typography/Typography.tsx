@@ -76,11 +76,23 @@ const transforms = {
 
 export type TTransforms = keyof typeof transforms;
 
+const colors = {
+  primary: 'primary',
+  secondary: 'secondary',
+  error: 'error',
+  info: 'info',
+  success: 'success',
+  warning: 'warning',
+} as const;
+
+export type TColors = keyof typeof colors;
+
 type Props = {
   variant?: TVariants;
   align?: TAlignments;
   styling?: TStylings;
   transform?: TTransforms;
+  color?: TColors;
   className?: string;
   children: ReactNode;
 } & TConditionalProps;
@@ -92,8 +104,9 @@ const Typography: FC<Props> = (
     align,
     styling,
     transform,
-    children,
+    color = 'primary',
     className,
+    children,
   },
   props,
 ) => {
@@ -105,6 +118,7 @@ const Typography: FC<Props> = (
         [styles[`c-typography--${align}`]]: align,
         [styles[`c-typography--${styling}`]]: styling,
         [styles[`c-typography--${transform}`]]: transform,
+        [styles[`c-typography--color-${color}`]]: color,
       }),
       ...props,
     },
