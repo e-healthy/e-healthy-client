@@ -155,7 +155,11 @@ const Home = () => {
               </Button>
             </div>
             {subscribeError && (
-              <Typography variant="bodySmall" className={classes.error}>
+              <Typography
+                variant="bodySmall"
+                color="error"
+                className={classes.error}
+              >
                 Esse email já está cadastrado.
               </Typography>
             )}

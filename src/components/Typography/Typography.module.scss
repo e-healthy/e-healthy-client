@@ -79,7 +79,6 @@
     text-align: right;
   }
 
-
   // Transforms
   &--lowercase {
     text-transform: lowercase;
@@ -87,6 +86,31 @@
 
   &--uppercase {
     text-transform: uppercase;
+  }
+
+  // Colors
+  &--primary {
+    color: var(--color-purple-blue);
+  }
+
+  &--secondary {
+    //TODO: Confirmar cor secundária!
+  }
+
+  &--error {
+    color: var(--color-red);
+  }
+
+  &--info {
+    color: var(--color-blue);
+  }
+
+  &--success {  
+    color: var(--color-green);
+  }
+
+  &--warning {
+    color: var(--color-yellow);
   }
 }
 

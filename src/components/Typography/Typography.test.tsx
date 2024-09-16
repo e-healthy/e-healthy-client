@@ -7,6 +7,7 @@ import Typography, {
   TAlignments,
   TStylings,
   TTransforms,
+  TColors,
 } from './Typography';
 
 const defaultProps = {
@@ -15,6 +16,7 @@ const defaultProps = {
   align: 'right' as TAlignments,
   styling: 'normal' as TStylings,
   transform: 'uppercase' as TTransforms,
+  color: 'primary' as TColors,
   className: '',
   children: 'Default Text',
 };
@@ -77,6 +79,17 @@ describe('<Typography />', () => {
     });
     const element = screen.getByText(/text/i);
     expect(element).toHaveClass('c-typography--uppercase');
+  });
+
+  it('should apply color class correctly', () => {
+    const text = 'Uppercase Text';
+    setup({
+      ...defaultProps,
+      color: 'error',
+      children: text,
+    });
+    const element = screen.getByText(/text/i);
+    expect(element).toHaveClass('c-typography--color-error');
   });
 
   it('should accept additional className', () => {

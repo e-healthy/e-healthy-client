@@ -21,7 +21,6 @@ const Input = forwardRef<HTMLInputElement, TProps>(
       default: classNames(styles['c-input']),
       container: classNames(styles['c-input__container']),
       input: classNames(styles['c-input__input']),
-      error: classNames(styles['c-input__error']),
     };
 
     return (
@@ -44,7 +43,7 @@ const Input = forwardRef<HTMLInputElement, TProps>(
         </div>
 
         {error && (
-          <Typography variant="small" as="small" className={classes.error}>
+          <Typography variant="small" as="small" color="error">
             {error}
           </Typography>
         )}
