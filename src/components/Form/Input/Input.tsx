@@ -1,7 +1,9 @@
-import Typography from '@/components/Typography';
-import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
-import styles from './Input.module.scss';
 import classNames from 'classnames';
+import { forwardRef, InputHTMLAttributes, ReactElement } from 'react';
+
+import Typography from '@/components/Typography';
+
+import styles from './Input.module.scss';
 
 type TProps = {
   id: string;
