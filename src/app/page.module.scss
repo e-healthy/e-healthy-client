@@ -25,7 +25,7 @@
 
   &__content {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 8px;
 
     @media screen and (min-width: 960px) {
@@ -50,7 +50,6 @@
     }
 
     &__error {
-      color: var(--color-red);
       margin-top: 4px;
     }
   }

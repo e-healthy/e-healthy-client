@@ -45,7 +45,12 @@ const Checkbox = forwardRef<HTMLInputElement, TProps>(
           {label}
           <span className={classes.checkmark} />
         </label>
-        <Typography variant="small" as="small" className={classes.error}>
+        <Typography
+          variant="small"
+          as="small"
+          color="error"
+          className={classes.error}
+        >
           {error}
         </Typography>
       </div>
