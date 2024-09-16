@@ -1,8 +1,9 @@
 import { FC, PropsWithChildren, useCallback } from 'react';
 import classNames from 'classnames';
 
-import styles from './Modal.module.scss';
 import Button from '../Form/Button';
+
+import styles from './Modal.module.scss';
 
 type TProps = {
   closeByIcon?: boolean;
