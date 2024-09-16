@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint:fix": "eslint --fix",
     "prettier:check": "prettier --check '**/*.{ts,tsx,json,yml}'",
     "prettier:fix": "prettier --write '**/*.{ts,tsx,json,yml}'",
     "test": "jest --verbose --no-cache",
@@ -15,10 +15,13 @@
     "test:coverage": "jest --coverage --no-cache"
   },
   "lint-staged": {
-    "src/app/**/*.(ts|tsx)": [
+    "*.{ts,tsx}": [
       "npm run prettier:fix",
       "npm run lint:fix",
       "jest --findRelatedTests --bail"
+    ],
+    "*.{json,md,yml,scss}": [
+      "npm run prettier:fix"
     ]
   },
   "dependencies": {
