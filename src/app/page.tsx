@@ -41,7 +41,7 @@ const Home = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm({
     defaultValues: {
@@ -146,7 +146,11 @@ const Home = () => {
                   error={errors?.email?.message}
                   {...register('email')}
                 />
-                <Button type="submit">
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  loading={isSubmitting}
+                >
                   <Image
                     src="/arrow-foward.svg"
                     alt="Email"
