@@ -3,7 +3,12 @@
   border-radius: 12px;
   padding: 32px 16px;
 
+  @media screen and (min-width: 768px) {
+    min-height: 600px;
+  }
+
   @media screen and (min-width: 960px) {
+    min-height: 570px;
     padding: 32px 24px;
     width: 312px;
   }
