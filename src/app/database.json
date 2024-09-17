@@ -1,0 +1,27 @@
+{
+  "secondary": {
+    "cards": [
+      {
+        "id": 1,
+        "iconName": "text",
+        "iconAlt": "Ícone de Texto",
+        "title": "Diário Digital",
+        "text": "Mantenha um registro diário de seus pensamentos, sentimentos e experiências com o nosso diário digital. Esta ferramenta confidencial permite que você expresse suas emoções livremente, reflita sobre seu dia e acompanhe seu progresso ao longo do tempo. Com o diário digital, você pode observar padrões, identificar áreas de crescimento e celebrar suas conquistas pessoais, tudo em um ambiente seguro e privado."
+      },
+      {
+        "id": 2,
+        "iconName": "clock",
+        "iconAlt": "Ícone de Relógio",
+        "title": "Controle de Medicação",
+        "text": "Gerencie e acompanhe seu regime de medicamentos de forma eficaz e segura com nossas ferramentas dedicadas. Elas permitem que você mantenha um registro detalhado de suas medicações, dosagens e horários, garantindo que você nunca perca uma dose. Nossa plataforma oferece lembretes personalizados e um histórico de uso, ajudando a monitorar seu tratamento de maneira organizada e confiável."
+      },
+      {
+        "id": 3,
+        "iconName": "calendar",
+        "iconAlt": "Ícone de Calendário",
+        "title": "Controle de Rotina",
+        "text": "Estabeleça uma rotina saudável e equilibrada com nossa funcionalidade de controle de rotina. Crie e gerencie listas de tarefas diárias, semanais e mensais, definindo prioridades e prazos de forma organizada. Nossa ferramenta permite que você acompanhe seu progresso, ajuste suas atividades  e mantenha o foco em suas metas, garantindo produtividade e motivação contínuas."
+      }
+    ]
+  }
+}

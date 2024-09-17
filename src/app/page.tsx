@@ -7,6 +7,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import classNames from 'classnames';
 import Image from 'next/image';
 
+import Card from './components/Card';
+import Icon from '@/components/Icon';
 import Logo from '@/components/Logo';
 import Navigation from '@/components/Navigation';
 import Typography from '@/components/Typography';
@@ -17,6 +19,7 @@ import Modal from '@/components/Modal';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { subscribe, TSubscribe } from '@/services/subscribe';
 
+import database from './database.json';
 import styles from './page.module.scss';
 
 const Home = () => {
@@ -69,14 +72,10 @@ const Home = () => {
   const contentSize = isMobile ? 'body' : 'body';
 
   const classes = {
-    root: classNames(styles['p-root']),
-    logo: classNames(styles['p-root__logo']),
-    content: classNames(styles['p-root__content']),
-    title: classNames(styles['p-root__content__title']),
-    label: classNames(styles['p-root__content__label']),
-    email: classNames(styles['p-root__content__email']),
-    error: classNames(styles['p-root__content__error']),
+    secondary: classNames(styles['s-secondary']),
   };
+
+  const db = database;
 
   return (
     <main>
@@ -172,6 +171,20 @@ const Home = () => {
             desejar.
           </Typography>
         </div>
+      </section>
+
+      <section className={classes.secondary}>
+        {db.secondary.cards.map(({ id, iconName, iconAlt, title, text }) => {
+          return (
+            <Card
+              key={id}
+              iconName={iconName}
+              iconAlt={iconAlt}
+              title={title}
+              text={text}
+            />
+          );
+        })}
       </section>
     </main>
   );
