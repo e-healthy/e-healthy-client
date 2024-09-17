@@ -21,20 +21,39 @@ describe('<Modal />', () => {
     jest.clearAllMocks();
   });
 
-  it('should not render when `isOpen` is false', () => {
+  it('should not render when isOpen is false', () => {
     setup();
     const modal = screen.queryByRole('dialog');
     expect(modal).not.toBeInTheDocument();
   });
 
-  it('should render when `isOpen` is true', () => {
+  it('should render when isOpen is true', () => {
     setup({ ...defaultProps, isOpen: true });
     const modal = screen.getByRole('dialog');
     expect(modal).toBeInTheDocument();
     expect(modal).toHaveTextContent(text);
   });
 
-  it('should call onClose when clicking the close icon', () => {
+  it('should call onClose when overlay is clicked', () => {
+    setup({ ...defaultProps, isOpen: true });
+    const overlay = screen.getByTestId('modal-overlay');
+    fireEvent.click(overlay);
+    expect(mockOnClose).toHaveBeenCalled();
+  });
+
+  it('should close the modal when "Escape" key is pressed', () => {
+    setup({ ...defaultProps, isOpen: true });
+    fireEvent.keyDown(window, { key: 'Escape' });
+    expect(mockOnClose).toHaveBeenCalled();
+  });
+
+  it('should not close the modal when a key other than "Escape" is pressed', () => {
+    setup({ ...defaultProps, isOpen: true });
+    fireEvent.keyDown(window, { key: 'Enter' });
+    expect(mockOnClose).not.toHaveBeenCalled();
+  });
+
+  it('should call onClose when the close icon is clicked', () => {
     setup({
       ...defaultProps,
       isOpen: true,
@@ -47,7 +66,7 @@ describe('<Modal />', () => {
     expect(mockOnClose).toHaveBeenCalledTimes(1);
   });
 
-  it('should call onClose when clicking the close button', () => {
+  it('should call onClose when the close button is clicked', () => {
     setup({
       ...defaultProps,
       isOpen: true,

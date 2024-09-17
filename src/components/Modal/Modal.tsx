@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useCallback } from 'react';
+import { FC, PropsWithChildren, useCallback, useEffect } from 'react';
 import classNames from 'classnames';
 
 import Button from '../Form/Button';
@@ -23,6 +23,22 @@ const Modal: FC<PropsWithChildren<TProps>> = ({
     onClose();
   }, [onClose]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, handleClose]);
+
   if (!isOpen) return null;
 
   const classes = {
@@ -38,6 +54,7 @@ const Modal: FC<PropsWithChildren<TProps>> = ({
         className={classes.overlay}
         onClick={handleClose}
         aria-hidden="true"
+        data-testid="modal-overlay"
       />
       <div className={classes.default} role="dialog" aria-modal="true">
         {closeByIcon && (
