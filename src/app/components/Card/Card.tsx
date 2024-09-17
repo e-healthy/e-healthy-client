@@ -2,22 +2,22 @@
 
 import { FC } from 'react';
 import classNames from 'classnames';
-import Image from 'next/image';
 
+import Icon from '@/components/Icon';
 import Typography from '@/components/Typography';
-
-import styles from './Card.module.scss';
 import useMediaQuery from '@/hooks/useMediaQuery';
 
+import styles from './Card.module.scss';
+
 type TProps = {
-  icon: string;
+  iconName: string;
   iconAlt: string;
   iconSize?: number;
   title: string;
   text: string;
 };
 
-const Card: FC<TProps> = ({ icon, iconAlt, title, text }) => {
+const Card: FC<TProps> = ({ iconName, iconAlt, title, text }) => {
   const classes = {
     default: classNames(styles['c-card']),
     icon: classNames(styles['c-card__icon']),
@@ -28,12 +28,12 @@ const Card: FC<TProps> = ({ icon, iconAlt, title, text }) => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const titleVariant = isMobile ? 'h6' : 'h5';
   const textVariant = isMobile ? 'bodySmall' : 'body';
-  const iconSize = isMobile ? 50 : 75;
+  const iconSize = isMobile ? 'small' : 'medium';
 
   return (
     <div className={classes.default}>
       <div className={classes.icon}>
-        <Image src={icon} alt={iconAlt} height={iconSize} width={iconSize} />
+        <Icon name={iconName} alt={iconAlt} size={iconSize} />
       </div>
 
       <Typography
