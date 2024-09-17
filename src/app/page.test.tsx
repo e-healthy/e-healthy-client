@@ -79,7 +79,7 @@ describe('<Home />', () => {
     });
   });
 
-  it('renders the cards section with icons and text', () => {
+  it('should render the cards section with icons and text', () => {
     setup();
 
     const cards = screen.getAllByRole('heading', { level: 2 });
@@ -87,5 +87,11 @@ describe('<Home />', () => {
     cards.forEach((card) => {
       expect(card).toBeInTheDocument();
     });
+  });
+
+  it('should render the footer with text and icon', () => {
+    setup();
+    expect(screen.getByRole('contentinfo')).toBeInTheDocument();
+    expect(screen.getByAltText(/Pipoca/i)).toBeInTheDocument();
   });
 });
