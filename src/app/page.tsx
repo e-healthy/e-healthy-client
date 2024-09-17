@@ -10,12 +10,12 @@ import Image from 'next/image';
 import Card from './components/Card';
 import Icon from '@/components/Icon';
 import Logo from '@/components/Logo';
+import Modal from '@/components/Modal';
 import Navigation from '@/components/Navigation';
 import Typography from '@/components/Typography';
 import Checkbox from '@/components/Form/Checkbox';
 import Input from '@/components/Form/Input';
 import Button from '@/components/Form/Button';
-import Modal from '@/components/Modal';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { subscribe, TSubscribe } from '@/services/subscribe';
 
@@ -68,10 +68,16 @@ const Home = () => {
 
   const isMobile = useMediaQuery('(max-width: 768px)');
   const logoSize = isMobile ? 'medium' : 'large';
-  const titleSize = isMobile ? 'h5' : 'h3';
-  const contentSize = isMobile ? 'body' : 'body';
+  const titleVariant = isMobile ? 'h5' : 'h3';
 
   const classes = {
+    primary: classNames(styles['s-primary']),
+    logo: classNames(styles['s-primary__logo']),
+    content: classNames(styles['s-primary__content']),
+    title: classNames(styles['s-primary__content__title']),
+    label: classNames(styles['s-primary__content__label']),
+    email: classNames(styles['s-primary__content__email']),
+    error: classNames(styles['s-primary__content__error']),
     secondary: classNames(styles['s-secondary']),
   };
 
@@ -80,7 +86,7 @@ const Home = () => {
   return (
     <main>
       <Navigation />
-      <section className={classes.root}>
+      <section className={classes.primary}>
         <Modal isOpen={isModalOpen} onClose={closeModal} closeByIcon>
           <Typography variant="bodyLarge" styling="bold">
             Obrigado por demonstrar interesse!
@@ -95,20 +101,15 @@ const Home = () => {
         </div>
         <div className={classes.content}>
           <Typography
-            variant={titleSize}
+            variant={titleVariant}
             as="h1"
             align="center"
             className={classes.title}
           >
-            Conheça o E-Healthy
+            {db.primary.title}
           </Typography>
-          <Typography variant={contentSize} align="justify">
-            Somos um portal dedicado ao cuidado da sua saúde mental, oferecendo
-            uma variedade de funcionalidades para promover equilíbrio, bem-estar
-            e inspiração no seu dia-a-dia. Nosso espaço seguro e acolhedor
-            inclui ferramentas de autoavaliação para monitorar seu progresso.
-            Estamos comprometidos em te ajudar a alcançar um bem-estar mental
-            duradouro e uma vida mais plena e satisfatória.
+          <Typography variant="body" align="justify">
+            {db.primary.content}
           </Typography>
 
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -116,8 +117,7 @@ const Home = () => {
               id="terms"
               label={
                 <Typography variant="bodySmall" className={classes.label}>
-                  Li e estou de acordo com o Termo de Uso e Política de
-                  Privacidade.
+                  {db.primary.forms.terms}
                 </Typography>
               }
               error={errors?.terms?.message}
@@ -127,7 +127,7 @@ const Home = () => {
               id="communications"
               label={
                 <Typography variant="bodySmall" className={classes.label}>
-                  Desejo receber comunicações sobre promocões e novidades.
+                  {db.primary.forms.communications}
                 </Typography>
               }
               {...register('communications')}
@@ -139,7 +139,7 @@ const Home = () => {
                 type="email"
                 placeholder="Digite seu email"
                 startAdornment={
-                  <Image src="/email.svg" alt="Email" width={20} height={16} />
+                  <Icon name="email" alt="Ícone de Email" size="xxsmall" />
                 }
                 error={errors?.email?.message}
                 {...register('email')}
@@ -159,16 +159,13 @@ const Home = () => {
                 color="error"
                 className={classes.error}
               >
-                Esse email já está cadastrado.
+                {db.primary.forms.error}
               </Typography>
             )}
           </form>
 
           <Typography variant="bodySmall" align="justify" styling="bold">
-            Ao preencher este formulário você a equipe do E-Healthy, a te
-            contactar por e-mail. Nenhum dos seus dados será utilizado por
-            terceiros e interrompemos a sua assinatura a qualquer momento que
-            desejar.
+            {db.primary.forms.disclaimer}
           </Typography>
         </div>
       </section>
