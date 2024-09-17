@@ -7,10 +7,11 @@
   --color-blue-darken: #184073;
   --color-gray-lighten: #d9d9d9;
   --color-gray: #8b8b8b;
+  --color-gray-lighten: rgba(139, 139, 139, 0.8);
   --color-purple: #6a68a7;
   --color-purple-blue: #262d40;
   --color-purple-gray: #eaecf4;
-  --color-red: #B00000;
+  --color-red: #b00000;
   --color-yellow: #f2af5e;
   --color-white-lighten: #d9d9d9;
   --color-white: #ffffff;
@@ -29,10 +30,18 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, p, small { 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
   color: var(--color-purple-blue);
 }
 
-p, small {
+p,
+small {
   line-height: 24px;
 }
