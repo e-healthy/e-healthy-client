@@ -6,7 +6,7 @@ import { createMatchMedia } from '@/utils/setupTest';
 import Card from './Card';
 
 const defaultProps = {
-  icon: '/calendar.svg',
+  iconName: 'calendar',
   iconAlt: 'Ícone de Calendário',
   title: 'Título do Card',
   text: 'Conteúdo do Card',
@@ -19,7 +19,7 @@ describe('<Card />', () => {
     setup();
 
     const icon = screen.getByAltText('Ícone de Calendário');
-    expect(icon).toHaveAttribute('src', '/calendar.svg');
+    expect(icon).toHaveAttribute('src', '/public/icons/calendar.svg');
 
     const title = screen.getByRole('heading', { name: 'Título do Card' });
     expect(title).toBeInTheDocument();
