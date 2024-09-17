@@ -17,7 +17,7 @@ describe('<Icon />', () => {
 
     const image = screen.getByAltText('Ícone de casa');
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute('src', '/public/icons/home.svg');
+    expect(image).toHaveAttribute('src', '/icons/home.svg');
   });
 
   it('should render with the correct alt text', () => {
@@ -72,6 +72,6 @@ describe('<Icon />', () => {
 
     const image = screen.getByAltText('Ícone inexistente');
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute('src', '/public/icons/non-existing-icon.svg');
+    expect(image).toHaveAttribute('src', '/icons/non-existing-icon.svg');
   });
 });
