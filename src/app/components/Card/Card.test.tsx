@@ -19,7 +19,7 @@ describe('<Card />', () => {
     setup();
 
     const icon = screen.getByAltText('Ícone de Calendário');
-    expect(icon).toHaveAttribute('src', '/public/icons/calendar.svg');
+    expect(icon).toHaveAttribute('src', '/icons/calendar.svg');
 
     const title = screen.getByRole('heading', { name: 'Título do Card' });
     expect(title).toBeInTheDocument();
