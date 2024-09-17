@@ -1,8 +1,8 @@
 .c-typography {
-  &--h1, 
-  &--h2, 
-  &--h3, 
-  &--h4, 
+  &--h1,
+  &--h2,
+  &--h3,
+  &--h4,
   &--h5,
   &--h6 {
     font-family: var(--font-rubik);
@@ -38,7 +38,7 @@
 
   &--bodyLarge {
     font-size: 20px;
-  }           
+  }
 
   &--bodySmall {
     font-size: 14px;
@@ -47,7 +47,6 @@
   &--small {
     font-size: 12px;
   }
-
 
   // Stylings
   &--bold {
@@ -89,29 +88,29 @@
   }
 
   // Colors
-  &--primary {
-    color: var(--color-purple-blue);
-  }
+  &--color {
+    &-primary {
+      color: var(--color-purple-blue);
+    }
 
-  &--secondary {
-    //TODO: Confirmar cor secundária!
-  }
+    &-secondary {
+      color: var(--color-white);
+    }
 
-  &--error {
-    color: var(--color-red);
-  }
+    &-error {
+      color: var(--color-red);
+    }
 
-  &--info {
-    color: var(--color-blue);
-  }
+    &-info {
+      color: var(--color-blue);
+    }
 
-  &--success {  
-    color: var(--color-green);
-  }
+    &-success {
+      color: var(--color-green);
+    }
 
-  &--warning {
-    color: var(--color-yellow);
+    &-warning {
+      color: var(--color-yellow);
+    }
   }
 }
-
-
