@@ -1,0 +1,33 @@
+.c-breadcrumb {
+  &__list {
+    align-items: center;
+    display: flex;
+    font-family: var(--font-roboto);
+    font-size: 12px;
+    justify-items: center;
+    list-style-type: none;
+    padding: 16px 0;
+
+    &__item {
+      font-family: var(--font-roboto);
+      display: flex;
+
+      &:not(:last-child) {
+        &:after {
+          align-items: center;
+          content: url('../../../public/icons/arrow-right.svg');
+          display: flex;
+          padding: 0 4px;
+        }
+      }
+
+      &:last-child {
+        font-weight: bold;
+      }
+
+      &__icon {
+        margin-right: 4px;
+      }
+    }
+  }
+}
