@@ -69,7 +69,8 @@ const Home = () => {
 
   const isMobile = useMediaQuery('(max-width: 768px)');
   const logoSize = isMobile ? 'medium' : 'large';
-  const titleVariant = isMobile ? 'h5' : 'h3';
+  const primaryTitleVariant = isMobile ? 'h5' : 'h3';
+  const secondaryTitleVariant = isMobile ? 'h5' : 'h3';
 
   const classes = {
     primary: classNames(styles['s-primary']),
@@ -79,7 +80,11 @@ const Home = () => {
     label: classNames(styles['s-primary__content__label']),
     email: classNames(styles['s-primary__content__email']),
     error: classNames(styles['s-primary__content__error']),
-    secondary: classNames(styles['s-secondary']),
+    secondary: {
+      root: classNames(styles['s-secondary']),
+      cards: classNames(styles['s-secondary__cards']),
+      title: classNames(styles['s-secondary__title']),
+    },
   };
 
   const db = database;
@@ -103,7 +108,7 @@ const Home = () => {
           </div>
           <div className={classes.content}>
             <Typography
-              variant={titleVariant}
+              variant={primaryTitleVariant}
               as="h1"
               align="center"
               className={classes.title}
@@ -176,18 +181,29 @@ const Home = () => {
           </div>
         </section>
 
-        <section className={classes.secondary}>
-          {db.secondary.cards.map(({ id, iconName, iconAlt, title, text }) => {
-            return (
-              <Card
-                key={id}
-                iconName={iconName}
-                iconAlt={iconAlt}
-                title={title}
-                text={text}
-              />
-            );
-          })}
+        <section className={classes.secondary.root}>
+          <Typography
+            variant={secondaryTitleVariant}
+            align="center"
+            className={classes.secondary.title}
+          >
+            Algumas de nossas funcionalidades
+          </Typography>
+          <div className={classes.secondary.cards}>
+            {db.secondary.cards.map(
+              ({ id, iconName, iconAlt, title, text }) => {
+                return (
+                  <Card
+                    key={id}
+                    iconName={iconName}
+                    iconAlt={iconAlt}
+                    title={title}
+                    text={text}
+                  />
+                );
+              },
+            )}
+          </div>
         </section>
       </main>
 
