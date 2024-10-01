@@ -1,7 +1,5 @@
 :root {
-  --font-roboto: 'Roboto', sans-serif;
-  --font-rubik: 'Rubik', sans-serif;
-
+  // Colors
   --color-black: #000000;
   --color-blue: #4f49f3;
   --color-blue-darken: #184073;
@@ -28,20 +26,4 @@ body {
   font-family: var(--font-roboto);
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-small {
-  color: var(--color-purple-blue);
-}
-
-p,
-small {
-  line-height: 24px;
 }
