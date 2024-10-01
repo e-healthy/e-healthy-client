@@ -37,7 +37,7 @@ describe('<Card />', () => {
     expect(icon).toHaveAttribute('width', '50');
 
     const title = screen.getByRole('heading', { name: 'Título do Card' });
-    expect(title.tagName).toBe('H2');
+    expect(title.tagName).toBe('H3');
 
     const text = screen.getByText('Conteúdo do Card');
     expect(text.tagName).toBe('P');
@@ -52,7 +52,7 @@ describe('<Card />', () => {
     expect(icon).toHaveAttribute('width', '75');
 
     const title = screen.getByRole('heading', { name: 'Título do Card' });
-    expect(title.tagName).toBe('H2');
+    expect(title.tagName).toBe('H3');
 
     const text = screen.getByText('Conteúdo do Card');
     expect(text.tagName).toBe('P');
