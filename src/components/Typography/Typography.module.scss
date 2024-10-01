@@ -1,3 +1,5 @@
+@use '../../scss/variables.scss' as var;
+
 .c-typography {
   &--h1,
   &--h2,
@@ -5,52 +7,62 @@
   &--h4,
   &--h5,
   &--h6 {
-    font-family: var(--font-rubik);
+    font-family: var.$font-rubik;
   }
 
   &--h1 {
-    font-size: 96px;
+    font-size: var.$font-size-h1;
+    line-height: var.$font-line-height-h1;
   }
 
   &--h2 {
-    font-size: 64px;
+    font-size: var.$font-size-h2;
+    line-height: var.$font-line-height-h2;
   }
 
   &--h3 {
-    font-size: 48px;
+    font-size: var.$font-size-h3;
+    line-height: var.$font-line-height-h3;
   }
 
   &--h4 {
-    font-size: 40px;
+    font-size: var.$font-size-h4;
+    line-height: var.$font-line-height-h4;
   }
 
   &--h5 {
-    font-size: 32px;
+    font-size: var.$font-size-h5;
+    line-height: var.$font-line-height-h5;
   }
 
   &--h6 {
-    font-size: 24px;
+    font-size: var.$font-size-h6;
+    line-height: var.$font-line-height-h6;
   }
 
   &--body {
-    font-size: 16px;
+    font-size: var.$font-size-body;
+    line-height: var.$font-line-height-body;
   }
 
   &--bodyLarge {
-    font-size: 20px;
+    font-size: var.$font-size-bodyLarge;
+    line-height: var.$font-line-height-bodyLarge;
   }
 
   &--bodySmall {
-    font-size: 14px;
+    font-size: var.$font-size-bodySmall;
+    line-height: var.$font-line-height-bodySmall;
   }
 
   &--small {
-    font-size: 12px;
+    font-size: var.$font-size-small;
+    line-height: var.$font-line-height-small;
   }
 
   // Stylings
   &--bold {
-    font-weight: bold;
+    font-weight: var.$font-weight-bold;
   }
 
   &--italic {
