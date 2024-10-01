@@ -15,13 +15,22 @@ type TProps = {
   name: string;
   alt: string;
   size: TSizes;
+  className?: string;
 };
 
-const Icon: FC<TProps> = ({ name, alt, size }) => {
+const Icon: FC<TProps> = ({ name, alt, size, className }) => {
   const path = `/icons/${name}.svg`;
   const iconSize = sizes[size];
 
-  return <Image src={path} alt={alt} height={iconSize} width={iconSize} />;
+  return (
+    <Image
+      src={path}
+      alt={alt}
+      height={iconSize}
+      width={iconSize}
+      className={className}
+    />
+  );
 };
 
 export default Icon;
