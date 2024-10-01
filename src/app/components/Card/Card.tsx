@@ -38,7 +38,7 @@ const Card: FC<TProps> = ({ iconName, iconAlt, title, text }) => {
 
       <Typography
         variant={titleVariant}
-        as="h2"
+        as="h3"
         color="secondary"
         align="center"
         className={classes.title}

@@ -1,0 +1,38 @@
+@use 'sass:math' as math;
+
+// Typography
+$font-roboto: 'Roboto', sans-serif;
+$font-rubik: 'Rubik', sans-serif;
+
+$font-size-base: 16;
+$font-size: 1rem;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$line-height-base: 1.5;
+
+// Headings
+$font-size-h1: #{math.div(80, $font-size-base)}rem;
+$font-line-height-h1: math.div(96, 80);
+$font-size-h2: #{math.div(60, $font-size-base)}rem;
+$font-line-height-h2: math.div(72, 60);
+$font-size-h3: #{math.div(40, $font-size-base)}rem;
+$font-line-height-h3: math.div(48, 40);
+$font-size-h4: #{math.div(32, $font-size-base)}rem;
+$font-line-height-h4: math.div(38, 32);
+$font-size-h5: #{math.div(26, $font-size-base)}rem;
+$font-line-height-h5: math.div(32, 26);
+$font-size-h6: #{math.div(20, $font-size-base)}rem;
+$font-line-height-h6: math.div(24, 20);
+
+// Paragraph
+$font-size-bodyLarge: #{math.div(18, $font-size-base)}rem;
+$font-line-height-bodyLarge: math.div(28, 18);
+$font-size-body: $font-size;
+$font-line-height-body: $line-height-base;
+$font-size-bodySmall: #{math.div(14, $font-size-base)}rem;
+$font-line-height-bodySmall: math.div(24, 14);
+
+// Small
+$font-size-small: #{math.div(10, $font-size-base)}rem;
+$font-line-height-small: math.div(16, 10);

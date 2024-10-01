@@ -69,8 +69,8 @@ const Home = () => {
 
   const isMobile = useMediaQuery('(max-width: 768px)');
   const logoSize = isMobile ? 'medium' : 'large';
-  const primaryTitleVariant = isMobile ? 'h5' : 'h3';
-  const secondaryTitleVariant = isMobile ? 'h5' : 'h3';
+  const primaryTitleVariant = isMobile ? 'h4' : 'h3';
+  const secondaryTitleVariant = isMobile ? 'h5' : 'h4';
 
   const classes = {
     primary: classNames(styles['s-primary']),
@@ -107,12 +107,7 @@ const Home = () => {
             <Logo size={logoSize} />
           </div>
           <div className={classes.content}>
-            <Typography
-              variant={primaryTitleVariant}
-              as="h1"
-              align="center"
-              className={classes.title}
-            >
+            <Typography variant={primaryTitleVariant} align="center" as="h1">
               {db.primary.title}
             </Typography>
             <Typography variant="body" align="justify">
@@ -186,6 +181,7 @@ const Home = () => {
             variant={secondaryTitleVariant}
             align="center"
             className={classes.secondary.title}
+            as="h2"
           >
             Algumas de nossas funcionalidades
           </Typography>
