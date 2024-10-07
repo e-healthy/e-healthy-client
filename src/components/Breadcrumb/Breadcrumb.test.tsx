@@ -32,15 +32,15 @@ describe('<Breadcrumb />', () => {
 
     const homeLink = screen.getByText('Home');
     expect(homeLink).toBeInTheDocument();
-    expect(homeLink).toHaveAttribute('href', '/');
+    expect(homeLink.closest('a')).toHaveAttribute('href', '/');
 
     const aboutLink = screen.getByText('About');
     expect(aboutLink).toBeInTheDocument();
-    expect(aboutLink).toHaveAttribute('href', '/about');
+    expect(aboutLink.closest('a')).toHaveAttribute('href', '/about');
 
     const contactLink = screen.getByText('Contact');
     expect(contactLink).toBeInTheDocument();
-    expect(contactLink).toHaveAttribute('href', '/contact');
+    expect(contactLink.closest('a')).toHaveAttribute('href', '/contact');
   });
 
   it('should not render home icon if the first breadcrumb is not Home or Página Inicial', () => {
