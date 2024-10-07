@@ -3,9 +3,9 @@ import Image from 'next/image';
 import classNames from 'classnames';
 
 const variants: Record<string, string> = {
-  core: 'core.svg',
-  logomark: 'logomark.svg',
-  wordmark: 'wordmark.svg',
+  core: '/core.svg',
+  logomark: '/logomark.svg',
+  wordmark: '/wordmark.svg',
 };
 
 const sizes: Record<string, number> = {
