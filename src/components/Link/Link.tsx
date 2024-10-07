@@ -2,6 +2,8 @@ import classNames from 'classnames';
 import { FC, PropsWithChildren } from 'react';
 import Link from 'next/link';
 
+import Typography from '@/components/Typography';
+
 import styles from './Link.module.scss';
 
 export type TProps = {
@@ -26,6 +28,7 @@ export const LinkComponent: FC<PropsWithChildren<TProps>> = ({
 }) => {
   const classes = {
     default: classNames(styles['c-link']),
+    content: classNames(styles['c-link__content']),
   };
 
   return (
@@ -39,7 +42,13 @@ export const LinkComponent: FC<PropsWithChildren<TProps>> = ({
       locale={locale}
       className={classes.default}
     >
-      {children}
+      <Typography
+        variant="bodySmall"
+        styling="bold"
+        className={classes.content}
+      >
+        {children}
+      </Typography>
     </Link>
   );
 };

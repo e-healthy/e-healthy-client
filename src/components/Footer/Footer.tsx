@@ -9,11 +9,7 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 
 import styles from './Footer.module.scss';
 
-type TFooter = {
-  children: React.ReactNode;
-};
-
-const Footer: FC<TFooter> = ({ children }) => {
+const Footer: FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const typographyVariant = isMobile ? 'small' : 'label';
 
@@ -32,7 +28,11 @@ const Footer: FC<TFooter> = ({ children }) => {
           color="secondary"
           className={classes.text}
         >
-          {children}
+          Cuide da sua saúde mental: Priorize momentos de descanso, relaxamento
+          e bem-estar. Lembre-se de que seu bem-estar emocional é tão importante
+          quanto sua saúde física. Reserve um tempo para você e permita-se
+          relaxar e recarregar. Estamos aqui para ajudar e apoiar você nessa
+          jornada.
         </Typography>
       </div>
       <div className={classes.image}>

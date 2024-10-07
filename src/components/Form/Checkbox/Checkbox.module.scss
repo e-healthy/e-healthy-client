@@ -2,11 +2,9 @@
   margin: 8px 0;
 
   &__container {
-    cursor: pointer;
     display: block;
     padding-left: 24px;
     position: relative;
-    user-select: none;
   }
 
   &__input {
@@ -20,11 +18,16 @@
     background-color: var(--color-white);
     border: 1px solid var(--color-black);
     border-radius: 2px;
+    cursor: pointer;
     height: 16px;
     left: 0;
     position: absolute;
     top: 3px;
     width: 16px;
+
+    &:hover {
+      background-color: var(color-gray);
+    }
 
     &::after {
       content: '';
@@ -33,7 +36,12 @@
     }
   }
 
-  &__container &__checkmark::after {
+  &__input:checked ~ &__checkmark {
+    background-color: var(--color-purple-blue);
+  }
+
+  &__input:checked ~ &__checkmark::after {
+    display: block;
     border: solid var(--color-white);
     border-width: 0 2px 2px 0;
     bottom: 4px;
@@ -41,18 +49,6 @@
     height: 10px;
     transform: rotate(45deg);
     width: 5px;
-  }
-
-  &__container:hover &__input ~ &__checkmark {
-    background-color: var(--color-gray-lighten);
-  }
-
-  &__container &__input:checked ~ &__checkmark {
-    background-color: var(--color-purple-blue);
-  }
-
-  &__input:checked ~ &__checkmark::after {
-    display: block;
   }
 
   &__error {

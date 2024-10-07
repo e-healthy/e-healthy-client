@@ -10,6 +10,7 @@ import Image from 'next/image';
 import Card from './components/Card';
 import Footer from '@/components/Footer';
 import Icon from '@/components/Icon';
+import Link from '@/components/Link';
 import Logo from '@/components/Logo';
 import Modal from '@/components/Modal';
 import Navigation from '@/components/Navigation';
@@ -118,9 +119,16 @@ const Home = () => {
               <Checkbox
                 id="terms"
                 label={
-                  <Typography variant="bodySmall" className={classes.label}>
-                    {db.primary.forms.terms}
-                  </Typography>
+                  <div className={classes.label}>
+                    <Typography variant="bodySmall">
+                      Li e estou de acordo com o
+                    </Typography>
+                    <Link href="/sobre/termos-de-uso"> Termo de Uso</Link>
+                    <Typography variant="bodySmall">e</Typography>
+                    <Link href="/sobre/politica-de-privacidade">
+                      Política de Privacidade.
+                    </Link>
+                  </div>
                 }
                 error={errors?.terms?.message}
                 {...register('terms')}
@@ -203,7 +211,7 @@ const Home = () => {
         </section>
       </main>
 
-      <Footer> {db.footer} </Footer>
+      <Footer />
     </>
   );
 };

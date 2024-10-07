@@ -1,3 +1,5 @@
+@use '@/scss/variables.scss' as var;
+
 .c-footer {
   align-items: center;
   background-color: var(--color-blue-darken);
@@ -11,6 +13,7 @@
   }
 
   &__text {
+    font-family: var.$font-roboto;
     line-height: 12px;
     width: 100%;
 

@@ -1,0 +1,35 @@
+.p-main {
+  background-color: var(--color-purple-gray);
+  padding: 12px 24px;
+
+  @media screen and (min-width: 768px) {
+    padding: 24px 48px;
+  }
+}
+
+.p-about {
+  background-color: var(--color-purple-gray);
+  padding: 12px 24px;
+
+  @media screen and (min-width: 768px) {
+    padding: 24px 48px;
+  }
+
+  &__title {
+    margin: 24px;
+
+    @media screen and (min-width: 768px) {
+      margin: 40px;
+    }
+  }
+
+  &__list {
+    &__item {
+      margin: 16px 0;
+
+      &__list {
+        list-style-type: none;
+      }
+    }
+  }
+}

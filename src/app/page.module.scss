@@ -43,7 +43,8 @@
     }
 
     &__label {
-      line-height: 18px;
+      display: flex;
+      gap: 4px;
     }
 
     &__email {
