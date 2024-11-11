@@ -9,12 +9,9 @@ const variants: Record<string, string> = {
 };
 
 const sizes: Record<string, number> = {
-  xxsmall: 104,
-  xsmall: 144,
-  small: 176,
-  medium: 240,
-  large: 360,
-  xlarge: 480,
+  small: 128,
+  medium: 144,
+  large: 160,
 };
 
 type TProps = {
@@ -23,13 +20,13 @@ type TProps = {
 };
 
 const Logo: FC<TProps> = ({ variant = 'core', size = 'medium' }) => {
-  const wordmarkHeight = variant === 'wordmark' ? sizes[size] / 3 : sizes[size];
+  const wordmarkHeight = variant === 'wordmark' ? sizes[size] / 4 : sizes[size];
 
   return (
     <Image
       className={classNames('c-logo')}
       src={variants[variant]}
-      alt="Logo do E-Healthy"
+      alt="Logo da E-Healthy"
       width={sizes[size]}
       height={wordmarkHeight}
       priority
