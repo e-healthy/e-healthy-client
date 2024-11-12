@@ -10,7 +10,7 @@ import styles from './Navigation.module.scss';
 
 const Navigation: FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const logoSize = isMobile ? 'xxsmall' : 'xsmall';
+  const logoSize = isMobile ? 'small' : 'medium';
 
   return (
     <nav className={classNames(styles['c-navigation'])}>
