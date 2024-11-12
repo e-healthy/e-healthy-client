@@ -2,36 +2,45 @@ import { FC } from 'react';
 import Image from 'next/image';
 import classNames from 'classnames';
 
-const variants: Record<string, string> = {
-  core: '/core.svg',
-  logomark: '/logomark.svg',
-  wordmark: '/wordmark.svg',
+const SIZES = {
+  small: 128,
+  medium: 144,
+  large: 160,
+} as const;
+
+type Color = 'default' | 'white';
+type Variant = 'core' | 'logomark' | 'wordmark';
+type Size = keyof typeof SIZES;
+
+export type TProps = {
+  variant?: Variant;
+  size?: Size;
+  color?: Color;
 };
 
-const sizes: Record<string, number> = {
-  xxsmall: 104,
-  xsmall: 144,
-  small: 176,
-  medium: 240,
-  large: 360,
-  xlarge: 480,
+const getVariantPath = (variant: Variant, color: Color) => {
+  const colorSuffix = color === 'white' ? '-white' : '';
+  return `/${variant}${colorSuffix}.svg`;
 };
 
-type TProps = {
-  variant?: string;
-  size?: string;
-};
+const Logo: FC<TProps> = ({
+  variant = 'core',
+  size = 'medium',
+  color = 'default',
+}) => {
+  const wordmarkHeight = variant.startsWith('wordmark')
+    ? SIZES[size] / 4
+    : SIZES[size];
 
-const Logo: FC<TProps> = ({ variant = 'core', size = 'medium' }) => {
-  const wordmarkHeight = variant === 'wordmark' ? sizes[size] / 3 : sizes[size];
-
+  const src = getVariantPath(variant, color);
+  console.log(src);
   return (
     <Image
       className={classNames('c-logo')}
-      src={variants[variant]}
-      alt="Logo do E-Healthy"
-      width={sizes[size]}
+      src={src}
+      alt="Logo da E-Healthy"
       height={wordmarkHeight}
+      width={SIZES[size] ?? SIZES['medium']}
       priority
     />
   );
