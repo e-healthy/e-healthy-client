@@ -33,7 +33,7 @@ const Logo: FC<TProps> = ({
     : SIZES[size];
 
   const src = getVariantPath(variant, color);
-  console.log(src);
+
   return (
     <Image
       className={classNames('c-logo')}
