@@ -1,69 +1,65 @@
+@use "sass:map";
 @use '@/scss/variables.scss' as var;
 
 .c-typography {
-  &--h1,
-  &--h2,
-  &--h3,
-  &--h4,
-  &--h5,
-  &--h6 {
-    font-family: var.$font-rubik;
-  }
-
   &--h1 {
-    font-size: var.$font-size-h1;
-    line-height: var.$font-line-height-h1;
+    font-size: map.get(var.$heading-sizes, "h1", "size");
+    line-height: map.get(var.$heading-sizes, "h1", "line-height");
   }
 
   &--h2 {
-    font-size: var.$font-size-h2;
-    line-height: var.$font-line-height-h2;
+    font-size: map.get(var.$heading-sizes, "h2", "size");
+    line-height: map.get(var.$heading-sizes, "h2", "line-height");
   }
 
   &--h3 {
-    font-size: var.$font-size-h3;
-    line-height: var.$font-line-height-h3;
+    font-size: map.get(var.$heading-sizes, "h3", "size");
+    line-height: map.get(var.$heading-sizes, "h3", "line-height");
   }
 
   &--h4 {
-    font-size: var.$font-size-h4;
-    line-height: var.$font-line-height-h4;
-  }
+    font-size: map.get(var.$heading-sizes, "h4", "size");
+    line-height: map.get(var.$heading-sizes, "h4", "line-height");
+  }   
 
   &--h5 {
-    font-size: var.$font-size-h5;
-    line-height: var.$font-line-height-h5;
+    font-size: map.get(var.$heading-sizes, "h5", "size");
+    line-height: map.get(var.$heading-sizes, "h5", "line-height");
   }
 
   &--h6 {
-    font-size: var.$font-size-h6;
-    line-height: var.$font-line-height-h6;
-  }
-
-  &--body {
-    font-size: var.$font-size-body;
-    line-height: var.$font-line-height-body;
+    font-size: map.get(var.$heading-sizes, "h6", "size");
+    line-height: map.get(var.$heading-sizes, "h6", "line-height");
   }
 
   &--bodyLarge {
-    font-size: var.$font-size-bodyLarge;
-    line-height: var.$font-line-height-bodyLarge;
+    font-size: map.get(var.$paragraph-sizes, "bodyLarge", "size");
+    line-height: map.get(var.$paragraph-sizes, "bodyLarge", "line-height");
+  }
+
+  &--body {
+    font-size: map.get(var.$paragraph-sizes, "body", "size");
+    line-height: map.get(var.$paragraph-sizes, "body", "line-height");
   }
 
   &--bodySmall {
-    font-size: var.$font-size-bodySmall;
-    line-height: var.$font-line-height-bodySmall;
+    font-size: map.get(var.$paragraph-sizes, "bodySmall", "size");
+    line-height: map.get(var.$paragraph-sizes, "bodySmall", "line-height");
   }
 
   &--small {
-    font-size: var.$font-size-small;
-    line-height: var.$font-line-height-small;
+    font-size: map.get(var.$paragraph-sizes, "small", "size");
+    line-height: map.get(var.$paragraph-sizes, "small", "line-height");
   }
 
   // Stylings
   &--bold {
-    font-weight: var.$font-weight-bold;
+    font-weight: map.get(var.$paragraph-weights, "bold");
   }
+
+  &--medium {
+    font-weight: map.get(var.$paragraph-weights, "medium");
+  } 
 
   &--italic {
     font-style: italic;
@@ -102,27 +98,27 @@
   // Colors
   &--color {
     &-primary {
-      color: var(--color-purple-blue);
+      color: var.$color-primary;
     }
 
     &-secondary {
-      color: var(--color-white);
+      color: var.$color-black;
     }
 
     &-error {
-      color: var(--color-red);
+      color: var.$color-error;
     }
 
     &-info {
-      color: var(--color-blue);
+      color: var.$color-information;
     }
 
     &-success {
-      color: var(--color-green);
+      color: var.$color-success;
     }
 
     &-warning {
-      color: var(--color-yellow);
+      color: var.$color-warning;
     }
   }
 }
