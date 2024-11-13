@@ -1,7 +1,21 @@
-@use 'sass:math' as math;
+// Colors
+$color-black-darkest: #202020;
+$color-black-dark: #525252;
+$color-black: #838383;
+$color-black-light: #cdcdcd;
+$color-black-lightest: #e6e6e6;
+$color-white: #ffffff;
+$color-primary: #6a68a7;
+$color-primary-light: #cdcde2;
+$color-primary-lightest: #deddeb;
+$color-error: #b00000;
+$color-success: #4f7043;
+$color-success-light: #dfeadc;
+$color-information: #22456d;
+$color-information-light: #c1d5ec;
+$color-warning: #e18700;
+$color-warning-light: #ffce85;
 
-// Typography
-$font-roboto: 'Roboto', sans-serif;
 $font-rubik: 'Rubik', sans-serif;
 
 $font-size-base: 16;
